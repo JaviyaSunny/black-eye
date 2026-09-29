@@ -80,6 +80,30 @@ npm run build
 
 ---
 
+## 🌐 Deploy to GitHub Pages (Live Without Backend)
+
+BLACK EYE is architected as an autonomous, zero-backend live dashboard when hosted statically. It runs full real-time telemetry simulation, risk alerts, geospatial tracking, and geotechnical AI analysis 100% in the browser.
+
+### Option 1: Automatic GitHub Actions (Recommended)
+1. Push this repository to GitHub:
+   ```bash
+   git remote add origin https://github.com/<YOUR_USERNAME>/<YOUR_REPO_NAME>.git
+   git push -u origin main
+   ```
+2. On GitHub, navigate to **Settings** > **Pages**.
+3. Under **Build and deployment** > **Source**, choose **GitHub Actions**.
+4. GitHub Actions will automatically run `.github/workflows/deploy.yml` and publish your live dashboard!
+
+### Option 2: Deploy with npm command
+```bash
+npm run deploy
+```
+*(Uses the `gh-pages` package to build and push `dist/` directly to the `gh-pages` branch).*
+
+> 🔒 **Security Notice:** API keys and environment secrets are **never** committed or pushed to GitHub. The live dashboard uses client-side offline geotechnical AI by default. If you wish to test online LLMs, you can safely paste your key in the dashboard's **Settings** tab where it is stored solely in your personal browser's `localStorage`.
+
+---
+
 ## 🏗️ Architecture & Technology Stack
 
 | Layer | Technology |
